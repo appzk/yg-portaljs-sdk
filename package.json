@@ -1,22 +1,36 @@
 {
   "name": "yg-portaljs-sdk",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env webpack --config webpack.prod.js",
+    "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",
     "lint:no-fix": "tslint -p ./tsconfig.json"
   },
   "keywords": [],
-  "author": "",
+  "authors": {
+    "name": "ondc",
+    "email": "fugang.bj@qq.com"
+  },
+  "repository": "https://github.com/ondc/yg-portaljs-sdk.git",
   "license": "ISC",
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
+    "@babel/core": "^7.8.0",
+    "@babel/polyfill": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.6.2",
+    "eslint-plugin-import": "^2.20.0",
     "html-webpack-plugin": "^3.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
@@ -26,6 +40,5 @@
   "dependencies": {
     "react-cookies": "^0.1.1",
     "@babel/runtime": "^7.2.0"
-    
   }
 }

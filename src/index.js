@@ -7,12 +7,13 @@ export function refresh() {
 
 export function goHome() {
   const currWindow = isFrame ? parent.window : window;
-  window.location.href= "/";
+  currWindow.location.href= "/";
 }
 
 export function logOut(){
   const expires = getExpires();
-  return cookie.save('access_token', '', { path: '/', expires, maxAge: 1000});
+  cookie.save('access_token', '', { path: '/', expires, maxAge: 1000});
+  goHome();
 }
 
 export function add(a, b) {
