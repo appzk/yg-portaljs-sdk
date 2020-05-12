@@ -1,4 +1,3 @@
-import cookie from 'react-cookies';
 // import * from './ypjs';
 export * from './ypjs';
 // export { yp };
