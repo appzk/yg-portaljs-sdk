@@ -1,44 +1,69 @@
 {
   "name": "yg-portaljs-sdk",
   "version": "1.0.6",
-  "description": "",
+  "description": "yg portal jssdk umd ",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env webpack-dev-server --config webpack.dev.js",
     "build": "cross-env webpack --config webpack.prod.js",
     "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",
-    "lint:no-fix": "tslint -p ./tsconfig.json"
+    "lint:no-fix": "tslint -p ./tsconfig.json",
+    "commit": "git-cz",
+    "mybuild": "echo \"Hello\"",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:view": "standard-version --dry-run"
   },
   "keywords": [],
   "authors": {
-    "name": "ondc",
+    "name": "appzk",
     "email": "fugang.bj@qq.com"
   },
-  "repository": "https://github.com/ondc/yg-portaljs-sdk.git",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run mybuild",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "echo \"提交代码前需要先进行单元测试\" "
+    }
+  },
+  "repository": "https://github.com/appzk/yg-portaljs-sdk.git",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.0",
     "@babel/polyfill": "^7.8.0",
     "@babel/preset-env": "^7.8.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^4.18.2",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-compat": "^2.6.2",
     "eslint-plugin-import": "^2.20.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "react-cookies": "^0.1.1",
-    "@babel/runtime": "^7.2.0"
+    "@babel/runtime": "^7.2.0",
+    "pubsub-js": "^1.8.0",
+    "react-cookies": "^0.1.1"
   }
 }
