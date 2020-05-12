@@ -1,4 +1,4 @@
-import * as yp from './index';
+import * as yp from '../src/index';
 
 
 function test(){

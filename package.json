@@ -5,8 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env webpack-dev-server --config webpack.dev.js",
-    "build": "cross-env webpack --mode production --config webpack.prod.js",
+    "start": "cross-env webpack-dev-server --mode=development  --config scripts/webpack.dev.js",
+    "build": "cross-env webpack --mode production --config scripts/webpack.prod.js",
     "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",
