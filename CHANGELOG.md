@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.7...v1.0.8) (2020-05-13)
+
+
+### Features
+
+* webpack common ([eb8c331](https://github.com/appzk/yg-portaljs-sdk/commit/eb8c3316e8c040695e81fc759628571f2b40a843))
+* 结构调整 ([77c37bb](https://github.com/appzk/yg-portaljs-sdk/commit/77c37bbf259d369f9aea94d677cd43824a9fa79e))
+
 ### 1.0.7 (2020-05-12)
 
 
