@@ -25,4 +25,13 @@ index.js 作为入口
 
 `npm install -D babel-loader @babel/core @babel/preset-env webpack`
 
+## 发版系列
+`git cz`
 
+`npm run prepublish`
+
+` npm run release:patch`
+
+`git push --follow-tags origin master && npm publish`
+
+`npm run sync:tnpm`
