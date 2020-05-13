@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.9](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.8...v1.0.9) (2020-05-13)
+
+
+### Features
+
+* babel-polyfill 结构调整 ([41a9358](https://github.com/appzk/yg-portaljs-sdk/commit/41a93583b667bb3f8b61ff74ac0f43fdfc225998))
+* 增加配置 ([e514356](https://github.com/appzk/yg-portaljs-sdk/commit/e514356376a2bee425a2e71a67317bf10fc8d508))
+
 ### [1.0.8](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.7...v1.0.8) (2020-05-13)
 
 
