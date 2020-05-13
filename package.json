@@ -2,9 +2,9 @@
   "name": "yg-portaljs-sdk",
   "version": "1.0.8",
   "description": "yg portal jssdk umd ",
-  "main": "./dist/index.js",
+  "main": "./lib/index.js",
   "files": [
-    "dist",
+    "lib",
     "example"
   ],
   "scripts": {
