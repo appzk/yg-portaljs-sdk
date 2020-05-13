@@ -3,6 +3,10 @@
   "version": "1.0.7",
   "description": "yg portal jssdk umd ",
   "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "example"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env webpack-dev-server --mode=development  --config scripts/webpack.dev.js",

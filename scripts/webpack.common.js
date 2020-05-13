@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     // export to AMD, CommonJS, or window
     libraryTarget: 'umd',
     // the name exported to window
