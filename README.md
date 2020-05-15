@@ -18,21 +18,21 @@ import { changeTheme, refresh } from './yg-portaljs-sdk';
 ```
 整体加载的写法如下。
 ```
-import * as yp from 'yg-portaljs-sdk';
+import * as ypsdk from 'yg-portaljs-sdk';
 
-yp.changeTheme('techblue')
+ypsdk.changeTheme('techblue')
 ```
 script tag
 ```
-window.yp.changeTheme('techblue');
+window.ypsdk.changeTheme('techblue');
 ```
 amd
 
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
 <script>
-  window.requirejs(['yg-portaljs-sdk'], function(yp) {
-    console.log(yp(1, 2));
+  window.requirejs(['yg-portaljs-sdk'], function(ypsdk) {
+    console.log(ypsdk.add(1, 2));
   });
 </script>
 ```
@@ -55,12 +55,12 @@ const newTab = {
       key: `tab-${this.index}`,
       urlpath: `https://www.baidu.com?${this.index}`,
     } ;
-yp.addTab(newTab);  
+ypsdk.addTab(newTab);  
 
 
 ```
 监听
 ```
-yp.onAddTab({success: this.onAddTab});
+ypsdk.onAddTab({success: this.onAddTab});
 ```
 

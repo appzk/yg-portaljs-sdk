@@ -10,7 +10,7 @@ export const message = {
     return this;
   },
   isDebug: false,
-  debug: (bl) => {
+  debug: function(bl)  {
     this.isDebug = bl;
   },
   theme: {
@@ -20,7 +20,7 @@ export const message = {
     return a + b;
 
   },
-  subscribe: (subkey, options) => {
+  subscribe: function(subkey, options) {
     PubSub.subscribe(subkey, function(arg, params) {
       
       this.isDebug && console.log(options, arg, params, subkey);
@@ -38,7 +38,7 @@ export const message = {
     this.publish(evtType.TAB_ADD,arg);
     return this;
   },
-  onAddTab: (options) => {
+  onAddTab: function(options) {
     this.subscribe(evtType.TAB_ADD,options);
     return this;
   },
@@ -50,7 +50,7 @@ export const message = {
     this.publish(evtType.TAB_CLEAR)
     return this;
   },
-  onRemoveTab: (key) => {
+  onRemoveTab: function(key) {
     this.subscribe(evtType.TAB_REMOVE,key);
     return this;
   },
@@ -58,7 +58,7 @@ export const message = {
     this.publish(evtType.TAB_REMOVE,arg);
     return this;
   },
-  onRefreshTab: (key) => {
+  onRefreshTab: function(key) {
     this.subscribe(evtType.TAB_REFRESH,key);
     return this;
   },
@@ -66,7 +66,7 @@ export const message = {
     this.publish(evtType.TAB_REFRESH,arg);
     return this;
   },
-  onHighLightMenu: (key) => {
+  onHighLightMenu: function(key) {
     this.subscribe(evtType.MENU_HIGHLIGHT,key);
     return this;
   },
