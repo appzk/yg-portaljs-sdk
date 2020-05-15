@@ -21,7 +21,8 @@
     "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
-    "release:view": "standard-version --dry-run"
+    "release:view": "standard-version --dry-run",
+    "postversion": "git push --follow-tags && npm publish --access public"
   },
   "keywords": [],
   "authors": {

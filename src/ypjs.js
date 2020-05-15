@@ -18,7 +18,10 @@ export function logOut(){
   goHome();
 }
 
-  
+export function show(str) {
+  console.log(str);
+  return show;
+}
   
 export function isFrame(){
   return top.location !== self.location;
@@ -68,4 +71,25 @@ export function onAddTab(){
 
 export function add() {
   return Reflect.apply(pubsub.add,pubsub,arguments);
+};
+
+export function refreshTab(){
+  return Reflect.apply(pubsub.refreshTab,pubsub,arguments);
+};
+export function onRefreshTab(){
+  return Reflect.apply(pubsub.onRefreshTab,pubsub,arguments);
+};
+
+export function removeTab(){
+  return Reflect.apply(pubsub.removeTab,pubsub,arguments);
+};
+export function onRemoveTab(){
+  return Reflect.apply(pubsub.onRemoveTab,pubsub,arguments);
+};
+
+export function clearTab(){
+  return Reflect.apply(pubsub.clearTab,pubsub,arguments);
+};
+export function onClearTab(){
+  return Reflect.apply(pubsub.onClearTab,pubsub,arguments);
 };
