@@ -1,25 +1,25 @@
-import * as yp from '../src/index';
+import ypsdk from '../src/index';
 
 let index = 1;
 function test(){
   console.log('加载sdk');
-  // console.log(yp.add(1, 2));
-  yp.say();
+  // console.log(ypsdk.add(1, 2));
+  ypsdk.say();
   const newTab = {
     title: `名称啊-${index}`,
     content: `名称啊-${index}`,
     key: `tab-${index}`,
     urlpath: `https://www.baidu.com?${index}`,
   } ;
-  yp.show(123)(456);
-  yp.addTab(newTab).say();
-  yp.refreshTab('abc').say();
-  yp.removeTab('aa').say();
-  yp.clearTab().say();
-  console.log(`isIframe=${yp.isFrame()}`);
+  ypsdk.show(123)(456);
+  ypsdk.addTab(newTab).say();
+  ypsdk.refreshTab('abc').say();
+  ypsdk.removeTab('aa').say();
+  ypsdk.clearTab().say();
+  console.log(`isIframe=${ypsdk.isFrame()}`);
   console.log('执行完成sdk');
 
-  console.log(yp.say() === yp.addTab(newTab));
-  console.log(yp.addTab(newTab));
+  console.log(ypsdk.say() === ypsdk.addTab(newTab));
+  console.log(ypsdk.addTab(newTab));
 }
 test();

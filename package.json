@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env webpack-dev-server --mode=development  --config scripts/webpack.dev.js",
-    "build": "cross-env webpack --mode production --config scripts/webpack.prod.js",
+    "build": "cross-env webpack --mode development --config scripts/webpack.prod.js",
+    "build:test": "npm run build && cp lib/ypsdk* ../ygyg-portal-frontend/node_modules/yg-portaljs-sdk/lib",
     "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",
@@ -71,7 +72,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.2.0",
-    "pubsub-js": "^1.8.0",
     "react-cookies": "^0.1.1"
   }
 }

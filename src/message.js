@@ -1,4 +1,4 @@
-import PubSub from 'pubsub-js'
+import PubSub from './pubsub'
   ;
 // event-types.js
 
@@ -21,17 +21,18 @@ export const message = {
 
   },
   subscribe: function(subkey, options) {
+    const that = this;
     PubSub.subscribe(subkey, function(arg, params) {
       
-      this.isDebug && console.log(options, arg, params, subkey);
+      that.isDebug && console.log(options, arg, params, subkey);
       !!options.success && options.success(params);
     });
     return this;
   },
-  publish: function(pubkey) {
+  publish: function(pubkey,arg) {
     
-    console.log( 'publis',pubkey);
-    // PubSub.publishSync(pubkey, arg);
+    console.log( arg,pubkey);
+    PubSub.publishSync(pubkey, arg);
     return this;
   },
   addTab: function(arg) {
