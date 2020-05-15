@@ -1,6 +1,6 @@
 import cookie from 'react-cookies';
 
-import { pubsubConfig as pubsub } from './pubsub';
+import { message } from './message';
 
 export function refresh() {
   const currWindow = isFrame ? parent.window : window;
@@ -60,36 +60,36 @@ export function changeTheme(theme) {
 }
 
 export function say(){
-  return Reflect.apply(pubsub.say,pubsub,arguments);
+  return Reflect.apply(message.say,message,arguments);
 }
 export function addTab(){
-  return Reflect.apply(pubsub.addTab,pubsub,arguments);
+  return Reflect.apply(message.addTab,message,arguments);
 };
 export function onAddTab(){
-  return Reflect.apply(pubsub.onAddTab,pubsub,arguments);
+  return Reflect.apply(message.onAddTab,message,arguments);
 };
 
 export function add() {
-  return Reflect.apply(pubsub.add,pubsub,arguments);
+  return Reflect.apply(message.add,message,arguments);
 };
 
 export function refreshTab(){
-  return Reflect.apply(pubsub.refreshTab,pubsub,arguments);
+  return Reflect.apply(message.refreshTab,message,arguments);
 };
 export function onRefreshTab(){
-  return Reflect.apply(pubsub.onRefreshTab,pubsub,arguments);
+  return Reflect.apply(message.onRefreshTab,message,arguments);
 };
 
 export function removeTab(){
-  return Reflect.apply(pubsub.removeTab,pubsub,arguments);
+  return Reflect.apply(message.removeTab,message,arguments);
 };
 export function onRemoveTab(){
-  return Reflect.apply(pubsub.onRemoveTab,pubsub,arguments);
+  return Reflect.apply(message.onRemoveTab,message,arguments);
 };
 
 export function clearTab(){
-  return Reflect.apply(pubsub.clearTab,pubsub,arguments);
+  return Reflect.apply(message.clearTab,message,arguments);
 };
 export function onClearTab(){
-  return Reflect.apply(pubsub.onClearTab,pubsub,arguments);
+  return Reflect.apply(message.onClearTab,message,arguments);
 };

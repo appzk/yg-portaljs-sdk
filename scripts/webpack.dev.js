@@ -12,7 +12,9 @@ module.exports = merge(common, {
     // 配置
      new HtmlWebpackPlugin({
        template: './example/index.html',
-     })
+     }),
+     
+
   ],
  
   devServer: {

@@ -35,3 +35,7 @@ index.js 作为入口
 `git push --follow-tags origin master && npm publish`
 
 `npm run sync:tnpm`
+
+http://developer.aliyun.com/mirror/npm/package/yg-portaljs-sdk
+
+https://www.npmjs.com/package/yg-portaljs-sdk

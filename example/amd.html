@@ -2,8 +2,8 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.2/require.min.js"></script>
   <script>
-    window.requirejs(['../lib/index'], function(yp) {
-      console.log(yp(1, 2));
+    window.requirejs(['../lib/ypsdk.min'], function(ypsdk) {
+      console.log(ypsdk.add(1, 2));
     });
   </script>
 </body>

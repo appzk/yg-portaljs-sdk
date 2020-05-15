@@ -1,7 +1,10 @@
 import PubSub from 'pubsub-js'
   ;
-  
-const pubsubConfig = {
+// event-types.js
+
+import * as evtType from './event-types';
+
+export const message = {
   say: function() {
     console.log('say ypjs');
     return this;
@@ -23,6 +26,7 @@ const pubsubConfig = {
       this.isDebug && console.log(options, arg, params, subkey);
       !!options.success && options.success(params);
     });
+    return this;
   },
   publish: function(pubkey) {
     
@@ -31,36 +35,44 @@ const pubsubConfig = {
     return this;
   },
   addTab: function(arg) {
-    this.publish('TAB-ADD',arg);
+    this.publish(evtType.TAB_ADD,arg);
     return this;
   },
   onAddTab: (options) => {
-    this.subscribe('TAB-ADD',options);
+    this.subscribe(evtType.TAB_ADD,options);
     return this;
   },
   onClearTab: function() {
-    this.subscribe('TAB-CLEAR');
+    this.subscribe(evtType.TAB_CLEAR);
     return this;
   },
   clearTab:function(){
-    this.publish('TAB-CLEAR')
+    this.publish(evtType.TAB_CLEAR)
     return this;
   },
   onRemoveTab: (key) => {
-    this.subscribe('TAB-REMOVE',key);
+    this.subscribe(evtType.TAB_REMOVE,key);
     return this;
   },
   removeTab:function(arg){
-    this.publish('TAB-REMOVE',arg)
+    this.publish(evtType.TAB_REMOVE,arg);
     return this;
   },
   onRefreshTab: (key) => {
-    this.subscribe('TAB-REFRESH',key);
+    this.subscribe(evtType.TAB_REFRESH,key);
     return this;
   },
   refreshTab:function(arg){
-    this.publish('TAB-REFRESH',arg)
+    this.publish(evtType.TAB_REFRESH,arg);
     return this;
   },
+  onHighLightMenu: (key) => {
+    this.subscribe(evtType.MENU_HIGHLIGHT,key);
+    return this;
+  },
+  highLightMenu:function(arg){
+    this.publish(evtType.MENU_HIGHLIGHT,arg);
+    return this;
+  },
+  // 
 };
-export {pubsubConfig};

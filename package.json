@@ -2,7 +2,7 @@
   "name": "yg-portaljs-sdk",
   "version": "1.0.10",
   "description": "yg portal jssdk umd ",
-  "main": "./lib/index.js",
+  "main": "./lib/ypsdk.min.js",
   "files": [
     "lib",
     "example"
@@ -42,7 +42,7 @@
     }
   },
   "repository": "https://github.com/appzk/yg-portaljs-sdk.git",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/polyfill": "^7.8.0",

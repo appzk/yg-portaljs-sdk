@@ -8,18 +8,17 @@ module.exports = {
   //   app: ["@babel/polyfill",path.resolve(__dirname,'../src/index.js')] //'./src/index.js'
   // },
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, '../lib'),
-    // export to AMD, CommonJS, or window
+    path: path.join(__dirname, '../lib'),
+    filename: './ypsdk.min.js',
+    library: 'ypsdk',
     libraryTarget: 'umd',
-    // the name exported to window
-    library: 'yp',
-    auxiliaryComment: {
-      root: "Root yg-portaljs-sdk",
-      commonjs: "CommonJS  yg-portaljs-sdk",
-      commonjs2: "CommonJS2  yg-portaljs-sdk",
-      amd: "AMD  yg-portaljs-sdk"
-    }    
+    globalObject: 'this',
+    umdNamedDefine: true
+    // filename: 'ypsdk.js', //文件名
+    // publicPath: '../lib/', //发布路径
+    // library: 'ypsdk', //类库名称
+    // libraryTarget: 'umd', //类库加载方式
+    // umdNamedDefine: true
   },
   plugins: [
     new CleanWebpackPlugin(),
