@@ -39,3 +39,12 @@ index.js 作为入口
 http://developer.aliyun.com/mirror/npm/package/yg-portaljs-sdk
 
 https://www.npmjs.com/package/yg-portaljs-sdk
+
+
+##
+
+http://static.ygego.f.me/static/iframe/indexb.html  主页面
+
+http://static.ygego.f.me/static/iframe/
+
+

@@ -1,9 +1,10 @@
-import ypsdk from '../src/index';
+import * as ypsdk from '../src/index';
 
 let index = 1;
 function test(){
   console.log('加载sdk');
   // console.log(ypsdk.add(1, 2));
+  console.log(ypsdk,111);
   ypsdk.say();
   const newTab = {
     title: `名称啊-${index}`,
@@ -16,6 +17,8 @@ function test(){
   ypsdk.refreshTab('abc').say();
   ypsdk.removeTab('aa').say();
   ypsdk.clearTab().say();
+
+  ypsdk.cross();
   console.log(`isIframe=${ypsdk.isFrame()}`);
   console.log('执行完成sdk');
 

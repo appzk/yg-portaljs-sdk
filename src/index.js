@@ -1,6 +1,11 @@
-import cookie from 'react-cookies';
+// import cookie from 'react-cookies';
 // import {ypjs} from './ypjs';
 import { message } from './message';
+import {CD} from './cross-domain';
+
+export function init( ypsdk ){
+	window.ypsdk = ypsdk;
+}
 
 export function refresh() {
   const currWindow = isFrame ? parent.window : window;
@@ -97,6 +102,12 @@ export function clearTab(){
 export function onClearTab(){
   return Reflect.apply(message.onClearTab,message,arguments);
 };
+export function cross(){
+  console.log('say cross');
+  window.CD = new CD();
+  window.CD.init();
+  window.CD.listen();
+}
 // const ypsdk = {
 //   refresh,
 //   goHome,

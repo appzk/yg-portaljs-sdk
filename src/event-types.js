@@ -1,4 +1,7 @@
-export const TAB_ADD = Symbol('TAB_ADD');
+export const MsgType={
+  TAB_ADD: 'TAB_ADD',
+};
+// TAB_ADD = Symbol('TAB_ADD');
 export const TAB_CLEAR = Symbol('TAB_CLEAR');
 export const TAB_REMOVE = Symbol('TAB_REMOVE');
 export const TAB_REFRESH = Symbol('TAB_REFRESH');

@@ -1,5 +1,7 @@
 import PubSub from './pubsub'
   ;
+import pm from './postmsg';
+
 // event-types.js
 
 import * as evtType from './event-types';
@@ -20,27 +22,81 @@ export const message = {
     return a + b;
 
   },
-  subscribe: function(subkey, options) {
+  subscribe: function(subkey, arg) {
     const that = this;
-    PubSub.subscribe(subkey, function(arg, params) {
+
+    if (!!arg && !!arg.ifrname){
+      /**
+       * callback: ƒ callback()
+        data: {a: 1, b: "a↵b↵c"} 传递数据
+        origin: "http://static.ygego.f.me" 来源页面
+        source:
+      */
+     console.log(arg,'arg');
+      pm.bind(subkey, function (params) {
+        console.log('页面订阅收到的参数', params);
+        !!arg.success && arg.success(params);// 订阅的成功回调
+
+        setTimeout(function () {
+          !!params.callback && params.callback(params);// 发布的回调
+            // params.callback('callback');
+            pm.send(subkey, window.parent, {bbb: 123}); // 向父窗体传递
+        }, 1000);
+  
+        setInterval(function () {
+            pm.send('testb-once', window.parent, {bbb: 3333});// 向父窗体传递
+        }, 1000);
+      });
+    }
+    else{
+      PubSub.subscribe(subkey, function(arg, params) {
       
-      that.isDebug && console.log(options, arg, params, subkey);
-      !!options.success && options.success(params);
-    });
+        that.isDebug && console.log(options, arg, params, subkey);
+        !!arg.success && arg.success(params);
+      });
+      
+    }
+    
+
+    
     return this;
   },
   publish: function(pubkey,arg) {
     
     console.log( arg,pubkey);
+    if (!!arg && (!!arg.ifrname || arg.fromorigin)){
+      var wina = document.getElementById(arg.ifrname); // 'wina'
+      const success = arg.success;
+      pm.send(
+        pubkey,
+        !!arg.ifrname? wina.contentWindow : arg.fromorigin,
+          // {a: 1, b: "a\nb\nc"},
+          arg,
+          {
+            callback: success || function () {
+              console.log('success callback', arguments);
+          }
+              // callback: function () {
+              //     console.log('callback', arguments);
+              // }
+          }
+      );
+    }
+    else{
     PubSub.publishSync(pubkey, arg);
+      
+    }  
     return this;
   },
   addTab: function(arg) {
-    this.publish(evtType.TAB_ADD,arg);
+    this.publish(evtType.MsgType.TAB_ADD,arg);
+    // // window.CD = new CD();
+  // window.CD.init();
+  // window.CD.listen();
     return this;
   },
   onAddTab: function(options) {
-    this.subscribe(evtType.TAB_ADD,options);
+    this.subscribe(evtType.MsgType.TAB_ADD,options);
     return this;
   },
   onClearTab: function() {

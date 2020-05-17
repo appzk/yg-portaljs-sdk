@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env webpack-dev-server --mode=development  --config scripts/webpack.dev.js",
     "build": "cross-env webpack --mode development --config scripts/webpack.prod.js",
-    "build:test": "npm run build && cp lib/ypsdk* ../ygyg-portal-frontend/node_modules/yg-portaljs-sdk/lib",
+    "build:portal": "npm run build && cp lib/ypsdk* ../ygyg-portal-frontend/node_modules/yg-portaljs-sdk/lib && cp lib/ypsdk* ../web-static/src/main/webapp/static",
     "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",
@@ -23,6 +23,9 @@
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:view": "standard-version --dry-run",
+    "test:cross": "npm run test:master & npm run test:children",
+    "test:master": "PORT=8042 http-server -c-1",
+    "test:children": "cd example && PORT=8043 http-server -c-1",
     "postversion": "git push --follow-tags && npm publish --access public"
   },
   "keywords": [],
@@ -72,6 +75,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.2.0",
+    "postmate": "^1.5.2",
     "react-cookies": "^0.1.1"
   }
 }
