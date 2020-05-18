@@ -36,11 +36,11 @@ export const message = {
     return this;
   },
   addTab: function(arg) {
-    this.publish(evtType.TAB_ADD,arg);
+    this.publish(evtType.MsgType.TAB_ADD,arg);
     return this;
   },
   onAddTab: function(options) {
-    this.subscribe(evtType.TAB_ADD,options);
+    this.subscribe(evtType.MsgType.TAB_ADD,options);
     return this;
   },
   onClearTab: function() {
@@ -68,11 +68,11 @@ export const message = {
     return this;
   },
   onHighLightMenu: function(key) {
-    this.subscribe(evtType.MENU_HIGHLIGHT,key);
+    this.subscribe(evtType.MsgType.MENU_HIGHLIGHT,key);
     return this;
   },
   highLightMenu:function(arg){
-    this.publish(evtType.MENU_HIGHLIGHT,arg);
+    this.publish(evtType.MsgType.MENU_HIGHLIGHT,arg);
     return this;
   },
   // 

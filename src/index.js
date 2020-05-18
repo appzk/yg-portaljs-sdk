@@ -38,7 +38,7 @@ export function getExpires(){
 }
 export function setTheme(theme) {
   const expires = getExpires();
-  return cookie.save('yg-theme', theme, { path: '/', expires, maxAge: 1000});
+  // return cookie.save('yg-theme', theme, { path: '/', expires, maxAge: 1000});
 }
 
 export function getThemeLink(currDocument){
@@ -102,6 +102,14 @@ export function clearTab(){
 export function onClearTab(){
   return Reflect.apply(message.onClearTab,message,arguments);
 };
+
+export function highLightMenu(){
+  return Reflect.apply(message.highLightMenu,message,arguments);
+};
+export function onHighLightMenu(){
+  return Reflect.apply(message.onHighLightMenu,message,arguments);
+};
+
 export function cross(){
   console.log('say cross');
   window.CD = new CD();

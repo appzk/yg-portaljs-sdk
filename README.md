@@ -58,9 +58,25 @@ const newTab = {
 ypsdk.addTab(newTab);  
 
 
+
 ```
 监听
 ```
 ypsdk.onAddTab({success: this.onAddTab});
 ```
 
+菜单高亮 门户用
+```
+ypsdk.onHighLightMenu(key);
+
+```
+子应用使用
+
+```
+const menuOptions = {
+    menuSelectedKeys: ['100000000000000068'],
+    menuOpenKeys: ['100000000000000047', '100000000000000004', '100000000000000068'],
+  };
+ypsdk.highLightMenu(menuOptions);
+
+```

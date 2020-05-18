@@ -12,13 +12,16 @@ function test(){
     key: `tab-${index}`,
     urlpath: `https://www.baidu.com?${index}`,
   } ;
+  ypsdk.onAddTab({success:function(){
+    console.log('this is subscribe success.',arguments);
+  }});
   ypsdk.show(123)(456);
   ypsdk.addTab(newTab).say();
   ypsdk.refreshTab('abc').say();
   ypsdk.removeTab('aa').say();
   ypsdk.clearTab().say();
 
-  ypsdk.cross();
+  // ypsdk.cross();
   console.log(`isIframe=${ypsdk.isFrame()}`);
   console.log('执行完成sdk');
 
