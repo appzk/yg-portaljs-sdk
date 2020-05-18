@@ -110,6 +110,13 @@ export function onHighLightMenu(){
   return Reflect.apply(message.onHighLightMenu,message,arguments);
 };
 
+export function titleTab(){
+  return Reflect.apply(message.titleTab,message,arguments);
+};
+export function onTitleTab(){
+  return Reflect.apply(message.onTitleTab,message,arguments);
+};
+
 export function cross(){
   console.log('say cross');
   window.CD = new CD();

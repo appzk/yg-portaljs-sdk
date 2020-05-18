@@ -1,6 +1,7 @@
 export const MsgType={
   TAB_ADD: 'TAB_ADD',
   MENU_HIGHLIGHT: 'MENU_HIGHLIGHT',
+  TAB_TITLE: 'TAB_TITLE',
 };
 // TAB_ADD = Symbol('TAB_ADD');
 export const TAB_CLEAR = Symbol('TAB_CLEAR');

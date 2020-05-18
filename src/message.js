@@ -75,5 +75,13 @@ export const message = {
     this.publish(evtType.MsgType.MENU_HIGHLIGHT,arg);
     return this;
   },
+  onTitleTab: function(key) {
+    this.subscribe(evtType.MsgType.TAB_TITLE,key);
+    return this;
+  },
+  titleTab:function(arg){
+    this.publish(evtType.MsgType.TAB_TITLE,arg);
+    return this;
+  },
   // 
 };
