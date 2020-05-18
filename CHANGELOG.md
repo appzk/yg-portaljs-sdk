@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.12](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.11...v1.0.12) (2020-05-18)
+
+
+### Features
+
+* add cross domain ([5c9f189](https://github.com/appzk/yg-portaljs-sdk/commit/5c9f189fef7073ea46f525aa00bab30a0b314d23))
+* add highLightMenu ([897c539](https://github.com/appzk/yg-portaljs-sdk/commit/897c5397f119b02743dff30abf254765cb4ff7e6))
+* window iframe 方案 ([00d4d66](https://github.com/appzk/yg-portaljs-sdk/commit/00d4d667bfb49677c47b324a7416c36ebdac52c1))
+* 更新菜单高亮功能 ([948f1d6](https://github.com/appzk/yg-portaljs-sdk/commit/948f1d69aae1fd34f05b958ca0dd2f852981538a))
+
+
+### Bug Fixes
+
+* fix => bug ([2620478](https://github.com/appzk/yg-portaljs-sdk/commit/2620478ea8ceec460612d4f7bcdcd3561ca3d8b3))
+* subscrib bug ([9e06322](https://github.com/appzk/yg-portaljs-sdk/commit/9e063225bdd7e85f3ad5c4b4f64d741952a206d6))
+
 ### [1.0.11](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.10...v1.0.11) (2020-05-15)
 
 
