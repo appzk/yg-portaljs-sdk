@@ -1,6 +1,8 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 module.exports = [{
   entry: {
@@ -42,6 +44,7 @@ module.exports = [{
   entry: {
     'ypsdk.min': './src/index.js',
   },
+  mode: 'production',
   output: {
     path: path.join(__dirname, '../lib'),
     filename: '[name].js',
@@ -55,8 +58,22 @@ module.exports = [{
     new HtmlWebpackPlugin({
       title: 'yg-portaljs-sdk',
       favicon: 'favicon.ico',
-    })
+    }),
   ],
+  optimization: { //与entry同级
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: true,
+          mangle: true,
+          output: {
+            comments: false,
+          },
+        },
+        sourceMap: false,
+      })
+    ]   
+  },
   module:{
     rules:[
       {

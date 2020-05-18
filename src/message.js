@@ -83,5 +83,14 @@ export const message = {
     this.publish(evtType.MsgType.TAB_TITLE,arg);
     return this;
   },
+  onRouterChange: function(key) {
+    this.subscribe(evtType.MsgType.ROUTER_CHANGE,key);
+    return this;
+  },
+  routerChange:function(arg){
+    this.publish(evtType.MsgType.ROUTER_CHANGE,arg);
+    return this;
+  },
+  
   // 
 };

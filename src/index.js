@@ -110,12 +110,57 @@ export function onHighLightMenu(){
   return Reflect.apply(message.onHighLightMenu,message,arguments);
 };
 
+/**
+ * 更新tab的title
+ * @kind api 
+ * @name titleTab
+ * @param object
+ * @example <caption>publish  titleTab.</caption>
+ * This usage:
+ *
+ * ```js
+ * const tabOptions = {
+      title: '新标题',
+      tabKey: `https://www.baidu.com?${this.index}`,
+    };
+    ypsdk.titleTab(tabOptions);
+ * ```
+ * 
+ * @type function
+ */
 export function titleTab(){
   return Reflect.apply(message.titleTab,message,arguments);
 };
+
+/**
+ * 更新tab的title
+ * @kind api 
+ * @name onTitleTab
+ * @param object
+ * @example <caption>listener onTitleTab.</caption>
+ * This usage:
+ *
+ * ```js
+ * ypsdk.onTitleTab({success: this.onTitleTab});
+ * ```
+ * 
+ * @type function
+ */
 export function onTitleTab(){
   return Reflect.apply(message.onTitleTab,message,arguments);
 };
+
+
+export function onRouterChange(){
+  return Reflect.apply(message.onRouterChange,message,arguments);
+};
+export function routerChange(){
+  return Reflect.apply(message.routerChange,message,arguments);
+};
+
+
+
+
 
 export function cross(){
   console.log('say cross');
