@@ -3,7 +3,7 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-module.exports = merge(common, {
+module.exports = merge(common[0], {
   devtool: 'inline-source-map',
   entry:{
     app:path.join(__dirname,'../example','app.js')

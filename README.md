@@ -80,3 +80,24 @@ const menuOptions = {
 ypsdk.highLightMenu(menuOptions);
 
 ```
+
+## 通过CDN访问
+
+jsdelivr
+
+地址格式为：
+
+https://cdn.jsdelivr.net/npm/(your packagename)@(version)/(file)
+
+https://cdn.jsdelivr.net/npm/yg-portaljs-sdk@1.0.12/lib/ypsdk.min.js
+
+unpkg.com
+
+地址格式为：
+example
+
+https://www.unpkg.com/yg-portaljs-sdk@1.0.12/lib/ypsdk.min.js
+
+https://www.unpkg.com/:package@:version/:file
+
+
