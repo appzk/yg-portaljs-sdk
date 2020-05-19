@@ -46,19 +46,29 @@ amd
 | refresh | 刷新 | 无 |
 | goHome | 回到主页 | 无 |
 | logOut | 退出 | 无 |
+| onAddTab | 监听tab | 无 |
+| addTab | 添加tab | 无 |
+| onHighLightMenu | 监听菜单高亮 | 无 |
+| highLightMenu | 菜单高亮 | 无 |
+| onTitleTab | 监听tabTitle变化 | 无 |
+| titleTab | 设置tabTitle | 无 |
+| onRouterChange | 监听RouterChange | 无 |
+| routerChange | 设置router change | 无 |
 
-触发
-```
+路由、tab 统一 参数
+``` 
 const newTab = {
       title: `名称啊-${this.index}`,
       content: `名称啊-${this.index}`,
       key: `tab-${this.index}`,
       urlpath: `https://www.baidu.com?${this.index}`,
     } ;
+```
+
+
+触发
+```
 ypsdk.addTab(newTab);  
-
-
-
 ```
 监听
 ```
@@ -68,7 +78,6 @@ ypsdk.onAddTab({success: this.onAddTab});
 菜单高亮 门户用
 ```
 ypsdk.onHighLightMenu(key);
-
 ```
 子应用使用
 
@@ -81,6 +90,15 @@ ypsdk.highLightMenu(menuOptions);
 
 ```
 
+路由变化
+```
+ypsdk.onRouterChange({success:function(){
+    console.log('this is router subscribe success.',arguments);
+}});
+
+  
+ypsdk.routerChange(newTab);
+```
 ## 通过CDN访问
 
 jsdelivr
