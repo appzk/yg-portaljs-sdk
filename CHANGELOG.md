@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.13](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.12...v1.0.13) (2020-05-19)
+
+
+### Features
+
+* add routerChange ([2642f3f](https://github.com/appzk/yg-portaljs-sdk/commit/2642f3f57070073bcd8c3f80188d32ad9d86acb1))
+* add RouterChange ([316ef2d](https://github.com/appzk/yg-portaljs-sdk/commit/316ef2dcd9b7785ac2e916a2fdb144b04d6df71c))
+* 生成debug 版本 ([9a0ba9f](https://github.com/appzk/yg-portaljs-sdk/commit/9a0ba9fa713be7ae592b9fe12af3ad5b79b67b5d))
+
 ### [1.0.12](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.11...v1.0.12) (2020-05-18)
 
 
