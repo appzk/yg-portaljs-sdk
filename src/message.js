@@ -51,40 +51,40 @@ export const message = {
     this.publish(evtType.TAB_CLEAR)
     return this;
   },
-  onRemoveTab: function(key) {
-    this.subscribe(evtType.TAB_REMOVE,key);
+  onRemoveTab: function(options) {
+    this.subscribe(evtType.TAB_REMOVE,options);
     return this;
   },
   removeTab:function(arg){
     this.publish(evtType.TAB_REMOVE,arg);
     return this;
   },
-  onRefreshTab: function(key) {
-    this.subscribe(evtType.TAB_REFRESH,key);
+  onRefreshTab: function(options) {
+    this.subscribe(evtType.TAB_REFRESH,options);
     return this;
   },
   refreshTab:function(arg){
     this.publish(evtType.TAB_REFRESH,arg);
     return this;
   },
-  onHighLightMenu: function(key) {
-    this.subscribe(evtType.MsgType.MENU_HIGHLIGHT,key);
+  onHighLightMenu: function(options) {
+    this.subscribe(evtType.MsgType.MENU_HIGHLIGHT,options);
     return this;
   },
   highLightMenu:function(arg){
     this.publish(evtType.MsgType.MENU_HIGHLIGHT,arg);
     return this;
   },
-  onTitleTab: function(key) {
-    this.subscribe(evtType.MsgType.TAB_TITLE,key);
+  onTitleTab: function(options) {
+    this.subscribe(evtType.MsgType.TAB_TITLE,options);
     return this;
   },
   titleTab:function(arg){
     this.publish(evtType.MsgType.TAB_TITLE,arg);
     return this;
   },
-  onRouterChange: function(key) {
-    this.subscribe(evtType.MsgType.ROUTER_CHANGE,key);
+  onRouterChange: function(options) {
+    this.subscribe(evtType.MsgType.ROUTER_CHANGE,options);
     return this;
   },
   routerChange:function(arg){

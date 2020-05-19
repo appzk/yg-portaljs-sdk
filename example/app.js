@@ -23,6 +23,15 @@ function test(){
 
   // ypsdk.cross();
   console.log(`isIframe=${ypsdk.isFrame()}`);
+
+  ypsdk.onRouterChange({success:function(){
+    console.log('this is router subscribe success.',arguments);
+  }});
+
+  
+  ypsdk.routerChange(newTab);
+
+
   console.log('执行完成sdk');
 
   console.log(ypsdk.say() === ypsdk.addTab(newTab));
