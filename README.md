@@ -99,6 +99,29 @@ ypsdk.onRouterChange({success:function(){
   
 ypsdk.routerChange(newTab);
 ```
+
+``` iframe 内 引用js
+https://cdn.jsdelivr.net/npm/yg-portaljs-sdk@1.0.14/lib/ypsdk.min.js
+```
+``` iframe 内 didMound
+window.setTimeout(() => {
+      ypsdk.onRouterChange({
+        isIframe: true,
+        success: function() {
+          console.log('this is componentDidMount router subscribe success.', arguments);
+        }});  
+    }, 300);
+```
+
+```iframe 内 
+highLightMenu = () => {
+    const menuOptions = {
+      menuSelectedKeys: ['100000000000000068'],
+      menuOpenKeys: ['100000000000000047', '100000000000000004', '100000000000000068'],
+    };
+    ypsdk.highLightMenu(menuOptions);
+  }
+```
 ## 通过CDN访问
 
 jsdelivr

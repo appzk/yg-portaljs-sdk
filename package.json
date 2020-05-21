@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env webpack-dev-server --mode=development  --config scripts/webpack.dev.js",
     "build": "cross-env webpack --mode development --config scripts/webpack.prod.js",
-    "build:portal": "npm run build && cp lib/ypsdk* ../ygyg-portal-frontend/node_modules/yg-portaljs-sdk/lib && cp lib/ypsdk* ../web-static/src/main/webapp/static",
+    "build:portal": "npm run build && cp lib/ypsdk* ../ygyg-portal-frontend/node_modules/yg-portaljs-sdk/lib && cp lib/ypsdk* ../web-static/src/main/webapp/static && cp lib/ypsdk* ../ygyg-portal-frontend-manage/node_modules/yg-portaljs-sdk/lib",
     "prepublish": "npm run build",
     "tsc": "./node_modules/.bin/tsc -p ./tsconfig.json",
     "lint": "tslint -p ./tsconfig.json --fix",

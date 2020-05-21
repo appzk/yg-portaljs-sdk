@@ -4,6 +4,10 @@ import PubSub from './pubsub'
 
 import * as evtType from './event-types';
 
+function isFrame(){
+  return top.location !== self.location;
+}
+
 export const message = {
   say: function() {
     console.log('say ypjs');
@@ -36,7 +40,10 @@ export const message = {
     return this;
   },
   addTab: function(arg) {
-    this.publish(evtType.MsgType.TAB_ADD,arg);
+    console.log(isFrame(),'=isFrame');
+    isFrame() ? window.ypsdk.addTab(arg) : this.publish(evtType.MsgType.TAB_ADD,arg) ;
+  
+    // this.publish(evtType.MsgType.TAB_ADD,arg);
     return this;
   },
   onAddTab: function(options) {
@@ -72,7 +79,7 @@ export const message = {
     return this;
   },
   highLightMenu:function(arg){
-    this.publish(evtType.MsgType.MENU_HIGHLIGHT,arg);
+    isFrame() ? window.ypsdk.highLightMenu(arg) : this.publish(evtType.MsgType.MENU_HIGHLIGHT,arg) ;
     return this;
   },
   onTitleTab: function(options) {
@@ -84,7 +91,12 @@ export const message = {
     return this;
   },
   onRouterChange: function(options) {
-    this.subscribe(evtType.MsgType.ROUTER_CHANGE,options);
+    // console.log(isFrame(),window.ypsdk,options,'=routerChange isFrame');
+    const {isIframe,...restOpt} = options;
+    // console.log(isFrame(), options.isIframe,restOpt,options,top.location , self.location);
+    isFrame() && options.isIframe ? window.ypsdk.onRouterChange(restOpt) : this.subscribe(evtType.MsgType.ROUTER_CHANGE,options);;
+    
+    
     return this;
   },
   routerChange:function(arg){
