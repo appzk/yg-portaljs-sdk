@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.14](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.13...v1.0.14) (2020-05-21)
+
+
+### Bug Fixes
+
+* 修复iframe内引用on监听的事件 ([67943e9](https://github.com/appzk/yg-portaljs-sdk/commit/67943e9199463143e5aceb84ce1a1b5858158c1e))
+
 ### [1.0.13](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.12...v1.0.13) (2020-05-19)
 
 
