@@ -110,6 +110,20 @@ export function onHighLightMenu(){
   return Reflect.apply(message.onHighLightMenu,message,arguments);
 };
 
+export function hideTabs(){
+  return Reflect.apply(message.hideTabs,message,arguments);
+};
+export function onHideTabs(){
+  return Reflect.apply(message.onHideTabs,message,arguments);
+};
+
+export function updateLogo(){
+  return Reflect.apply(message.updateLogo,message,arguments);
+};
+export function onUpdateLogo(){
+  return Reflect.apply(message.onUpdateLogo,message,arguments);
+};
+
 /**
  * 更新tab的title
  * @kind api 

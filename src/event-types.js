@@ -3,10 +3,9 @@ export const MsgType={
   MENU_HIGHLIGHT: 'MENU_HIGHLIGHT',
   TAB_TITLE: 'TAB_TITLE',
   ROUTER_CHANGE: 'ROUTER_CHANGE',
+  TABS_HIDE: 'TABS_HIDE',
+  TAB_REMOVE: 'TAB_REMOVE',
+  TAB_REFRESH: 'TAB_REFRESH',
+  TAB_CLEAR: 'TAB_CLEAR',
+  LOGO_UPDATE: 'LOGO_UPDATE',
 };
-// TAB_ADD = Symbol('TAB_ADD');
-export const TAB_CLEAR = Symbol('TAB_CLEAR');
-export const TAB_REMOVE = Symbol('TAB_REMOVE');
-export const TAB_REFRESH = Symbol('TAB_REFRESH');
-// export const MENU_HIGHLIGHT = Symbol('MENU_HIGHLIGHT');
-// export const TAB_ADD = Symbol('TAB_ADD');

@@ -46,14 +46,37 @@ amd
 | refresh | 刷新 | 无 |
 | goHome | 回到主页 | 无 |
 | logOut | 退出 | 无 |
-| onAddTab | 监听tab | 无 |
+| onAddTab | 监听tab | options |
 | addTab | 添加tab | 无 |
-| onHighLightMenu | 监听菜单高亮 | 无 |
-| highLightMenu | 菜单高亮 | 无 |
-| onTitleTab | 监听tabTitle变化 | 无 |
+| onHighLightMenu | 监听菜单高亮 | options |
+| highLightMenu | 菜单高亮 | options |
+| onTitleTab | 监听tabTitle变化 | options |
 | titleTab | 设置tabTitle | 无 |
-| onRouterChange | 监听RouterChange | 无 |
-| routerChange | 设置router change | 无 |
+| onRouterChange | 监听RouterChange | options |
+| routerChange | 设置router change | options |
+| onRemoveTab | 监听onRemoveTab| options |
+| removeTab | 设置router change | options |
+| onHideTabs | 监听第一层tab隐藏 | options |
+| hideTabs | 触发hide Tabs | 无 |
+
+``` 相关 options on系列回调方法结构
+
+
+let funcConfig = {
+  complete: function(...options) {
+    console.log(options);
+  },
+  success: function(...options) {
+    console.log(options);
+  },
+  cancel: function(...options) {
+    console.log(options);
+  },
+  fail: function(...options) {
+    console.log(options);
+  },
+};
+```
 
 路由、tab 统一 参数
 ``` 
@@ -64,7 +87,6 @@ const newTab = {
       urlpath: `https://www.baidu.com?${this.index}`,
     } ;
 ```
-
 
 触发
 ```
@@ -77,7 +99,7 @@ ypsdk.onAddTab({success: this.onAddTab});
 
 菜单高亮 门户用
 ```
-ypsdk.onHighLightMenu(key);
+ypsdk.onHighLightMenu({success: this.onHighLightMenu});
 ```
 子应用使用
 
@@ -122,6 +144,9 @@ highLightMenu = () => {
     ypsdk.highLightMenu(menuOptions);
   }
 ```
+
+
+
 ## 通过CDN访问
 
 jsdelivr
@@ -141,4 +166,17 @@ https://www.unpkg.com/yg-portaljs-sdk@1.0.12/lib/ypsdk.min.js
 
 https://www.unpkg.com/:package@:version/:file
 
+## CDN访问慢 改成本地
+通过webpack 打包
+```
+new CopyWebpackPlugin([
+      {
+        from: './node_modules/yg-portaljs-sdk/lib',
+        to: 'lib',
+      },
+    ]),
+```
 
+```引用方式
+<script type="test/javascript" src="/lib/ypsdk.min.js"></script>
+```

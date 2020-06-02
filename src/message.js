@@ -51,27 +51,27 @@ export const message = {
     return this;
   },
   onClearTab: function() {
-    this.subscribe(evtType.TAB_CLEAR);
+    this.subscribe(evtType.MsgType.TAB_CLEAR);
     return this;
   },
   clearTab:function(){
-    this.publish(evtType.TAB_CLEAR)
+    this.publish(evtType.MsgType.TAB_CLEAR)
     return this;
   },
   onRemoveTab: function(options) {
-    this.subscribe(evtType.TAB_REMOVE,options);
+    this.subscribe(evtType.MsgType.TAB_REMOVE,options);
     return this;
   },
   removeTab:function(arg){
-    this.publish(evtType.TAB_REMOVE,arg);
+    this.publish(evtType.MsgType.TAB_REMOVE,arg);
     return this;
   },
   onRefreshTab: function(options) {
-    this.subscribe(evtType.TAB_REFRESH,options);
+    this.subscribe(evtType.MsgType.TAB_REFRESH,options);
     return this;
   },
   refreshTab:function(arg){
-    this.publish(evtType.TAB_REFRESH,arg);
+    this.publish(evtType.MsgType.TAB_REFRESH,arg);
     return this;
   },
   onHighLightMenu: function(options) {
@@ -103,6 +103,21 @@ export const message = {
     this.publish(evtType.MsgType.ROUTER_CHANGE,arg);
     return this;
   },
-  
+  onHideTabs: function(options) {
+    this.subscribe(evtType.MsgType.TABS_HIDE,options);
+    return this;
+  },
+  hideTabs:function(arg){
+    this.publish(evtType.MsgType.TABS_HIDE,arg);
+    return this;
+  },
+  onUpdateLogo: function(options) {
+    this.subscribe(evtType.MsgType.LOGO_UPDATE,options);
+    return this;
+  },
+  updateLogo:function(arg){
+    this.publish(evtType.MsgType.LOGO_UPDATE,arg);
+    return this;
+  },
   // 
 };
