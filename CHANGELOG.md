@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.15](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.14...v1.0.15) (2020-06-02)
+
+
+### Features
+
+* hideTabs and readme ([7f5f919](https://github.com/appzk/yg-portaljs-sdk/commit/7f5f91906eb258cbaa4844efa3ac68449bcec932))
+
 ### [1.0.14](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.13...v1.0.14) (2020-05-21)
 
 
