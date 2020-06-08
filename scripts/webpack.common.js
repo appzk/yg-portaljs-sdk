@@ -64,11 +64,17 @@ module.exports = [{
     minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
-          compress: true,
           mangle: true,
-          output: {
-            comments: false,
+          //删除注释
+          output:{
+            comments:false
           },
+          //删除console 和 debugger  删除警告
+          compress:{
+              warnings:false,
+              drop_debugger:true,
+              drop_console:true
+          }
         },
         sourceMap: false,
       })

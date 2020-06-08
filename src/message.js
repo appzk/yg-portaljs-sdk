@@ -35,12 +35,12 @@ export const message = {
   },
   publish: function(pubkey,arg) {
     
-    console.log( arg,pubkey);
+    // console.log( arg,pubkey);
     PubSub.publishSync(pubkey, arg);
     return this;
   },
   addTab: function(arg) {
-    console.log(isFrame(),'=isFrame');
+    // console.log(isFrame(),'=isFrame');
     isFrame() ? window.ypsdk.addTab(arg) : this.publish(evtType.MsgType.TAB_ADD,arg) ;
   
     // this.publish(evtType.MsgType.TAB_ADD,arg);
@@ -50,12 +50,12 @@ export const message = {
     this.subscribe(evtType.MsgType.TAB_ADD,options);
     return this;
   },
-  onClearTab: function() {
-    this.subscribe(evtType.MsgType.TAB_CLEAR);
+  onClearTab: function(options) {
+    this.subscribe(evtType.MsgType.TAB_CLEAR,options);
     return this;
   },
   clearTab:function(){
-    this.publish(evtType.MsgType.TAB_CLEAR)
+    isFrame() ? window.ypsdk.clearTab() : this.publish(evtType.MsgType.TAB_CLEAR) ;
     return this;
   },
   onRemoveTab: function(options) {
@@ -63,7 +63,7 @@ export const message = {
     return this;
   },
   removeTab:function(arg){
-    this.publish(evtType.MsgType.TAB_REMOVE,arg);
+    isFrame() ? window.ypsdk.removeTab(arg) : this.publish(evtType.MsgType.TAB_REMOVE,arg) ;
     return this;
   },
   onRefreshTab: function(options) {

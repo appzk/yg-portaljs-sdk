@@ -58,6 +58,7 @@ amd
 | removeTab | 设置router change | options |
 | onHideTabs | 监听第一层tab隐藏 | options |
 | hideTabs | 触发hide Tabs | 无 |
+| clearTab  | 清除所有 Tabs | 无 |
 
 ``` 相关 options on系列回调方法结构
 
