@@ -1,6 +1,6 @@
 {
   "name": "yg-portaljs-sdk",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "yg portal jssdk umd ",
   "main": "./lib/ypsdk.min.js",
   "files": [

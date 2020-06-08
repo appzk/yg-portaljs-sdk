@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.15...v1.0.16) (2020-06-08)
+
+
+### Features
+
+* clearTab ([5c506fd](https://github.com/appzk/yg-portaljs-sdk/commit/5c506fd8db33979036abae28c5773790891a4721))
+
 ### [1.0.15](https://github.com/appzk/yg-portaljs-sdk/compare/v1.0.14...v1.0.15) (2020-06-02)
 
 
